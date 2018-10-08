@@ -3,9 +3,12 @@
 	left: 0;
 	width: 100%;
 	z-index: 9999;
-	padding: 20px 0;
 	background: $header-background;
 	color: $white1;
+
+	@include media-breakpoint-up(lg) {
+		padding: 20px 0;
+	}
 
 	a {
 		color: $white1;
@@ -16,7 +19,54 @@
 		}
 	}
 
-	@include media-breakpoint-up(md) {
+	.header-logo {
+		@include media-breakpoint-down(md) {
+			padding: 15px 70px 15px 15px;
+		}
+
+		.logo {
+			margin: 0;
+
+			a {
+				display: block;
+			}
+
+			img {
+				@include media-breakpoint-down(md) {
+					max-height: 34px;
+					display: block;
+				}
+			}
+		}
+
+		.navbar-toggler {
+			position: absolute;
+			right: 15px;
+			top: 17px;
+			outline: none;
+			border: 0;
+			padding: 10px;
+			display: none;
+
+			@include media-breakpoint-down(md) {
+				display: block;
+			}
+
+			.navbar-toggler-line {
+				background: $white1;
+				height: 2px;
+				width: 22px;
+				margin-top: 4px;
+				display: block;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
 
 		&.sticky-deactive {
 			position: fixed;
@@ -41,7 +91,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		position: fixed;
 		padding: 0;
 		background: $header-background !important;
@@ -64,10 +114,21 @@
 	.navbar-nav {
 		margin-left: auto;
 
+		@include media-breakpoint-down(md) {
+			border-top: 1px solid $white1;
+			padding: 0 0 30px;
+		}
+
 		.nav-item {
-			margin-right: 20px;
 			display: inline-block;
-			position: inherit;
+
+			@include media-breakpoint-up(lg) {
+				position: inherit;
+			}
+
+			@include media-breakpoint-up(lg) {
+				margin-right: 20px;
+			}
 
 			&:last-child {
 				margin-right: 0;
@@ -81,6 +142,11 @@
 
 				&.btn-outline {
 					padding: 10px 20px;
+					display: inline-block;
+
+					@include media-breakpoint-down(md) {
+						margin-bottom: 20px;
+					}
 				}
 
 				i {
@@ -90,13 +156,52 @@
 
 			.dropdown-toggle {
 				&::after {
-					display: none;
+					content: "\f196";
+					font-family: FontAwesome;
+					border: 0;
+					font-size: 21px;
+					position: absolute;
+					right: 12px;
+					top: 8px;
+					margin: 0;
+					width: auto;
+					height: auto;
+
+					@include media-breakpoint-up(lg) {
+						display: none;
+					}
+				}
+			}
+
+			&.show {
+				.dropdown-toggle {
+					&::after {
+						content: "\f147";
+					}
 				}
 			}
 
 			&:hover {
 				.mega-menu {
-					display: block;
+					@include media-breakpoint-up(lg) {
+						display: block;
+					}
+				}
+			}
+
+			.dropdown-menu {
+				border: 0;
+				border-radius: 0;
+				margin: 0;
+				background: none;
+				font-size: inherit;
+
+				@include media-breakpoint-only(lg) {
+					font-size: 12px;
+				}
+
+				@include media-breakpoint-down(md) {
+					font-size: 13px;
 				}
 			}
 		}
@@ -107,13 +212,42 @@
 			left: 0;
 			right: 0;
 			padding-top: 20px;
-			text-align: center;
 			display: none;
 			z-index: 99;
 
+			@include media-breakpoint-up(lg) {
+				text-align: center;
+			}
+
+			&.show {
+				@include media-breakpoint-down(md) {
+					display: block;
+					position: static;
+					padding: 0;
+				}
+			}
+
 			.mega-menu-inner {
-				padding: 30px 20px 20px;
-				background: $header-background;
+				@include media-breakpoint-up(lg) {
+					padding: 30px 20px 20px;
+					background: $header-background;
+				}
+
+				> .row {
+					> div {
+						@include media-breakpoint-down(md) {
+							margin-bottom: 15px;
+
+							a {
+								padding-left: 10px;
+							}
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
 			}
 
 			a {
@@ -122,13 +256,20 @@
 				span {
 					display: block;
 					text-transform: uppercase;
-					margin-top: 20px;
+
+					@include media-breakpoint-up(lg) {
+						margin-top: 20px;
+					}
 				}
 
 				img {
 					transition: all .3s;
 					top: 0;
 					position: relative;
+
+					@include media-breakpoint-down(md) {
+						display: none;
+					}
 				}
 
 				&:hover {
@@ -143,6 +284,10 @@
 
 .mini-cart {
 	position: relative;
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 20px;
+	}
 
 	.mybag-link {
 		position: relative;
@@ -172,7 +317,7 @@
 		display: none;
 		z-index: 99;
 
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			display: none !important;
 			padding: 0;
 			position: fixed;
@@ -197,7 +342,7 @@
 			cursor: pointer;
 			line-height: 25px;
 
-			@include media-breakpoint-down(sm) {
+			@include media-breakpoint-down(md) {
 				display: block;
 			}
 		}
@@ -224,7 +369,7 @@
 				right: 10px;
 				top: -10px;
 
-				@include media-breakpoint-down(sm) {
+				@include media-breakpoint-down(md) {
 					display: none;
 				}
 			}
@@ -289,7 +434,7 @@
 									margin: 0;
 								}
 
-								@include media-breakpoint-down(sm) {
+								@include media-breakpoint-down(md) {
 									position: fixed;
 									z-index: 99;
 									top: 25px;
@@ -311,13 +456,13 @@
 									right: 45px;
 									top: 5px;
 
-									@include media-breakpoint-down(sm) {
+									@include media-breakpoint-down(md) {
 										display: none;
 									}
 								}
 
 								&::after {
-									@include media-breakpoint-down(sm) {
+									@include media-breakpoint-down(md) {
 										content: "\f00d";
 										font-family: FontAwesome;
 										color: #333;
@@ -341,7 +486,7 @@
 
 							&.open-detail {
 								.item-options {
-									@include media-breakpoint-down(sm) {
+									@include media-breakpoint-down(md) {
 										display: block !important;
 									}
 								}
@@ -405,9 +550,17 @@
 		}
 	}
 
+	&:hover {
+		.topCartContent {
+			@include media-breakpoint-up(lg) {
+				display: block !important;
+			}
+		}
+	}
+
 	&.open-cart {
 		.topCartContent {
-			@include media-breakpoint-down(sm) {
+			@include media-breakpoint-down(md) {
 				display: block !important;
 			}
 		}

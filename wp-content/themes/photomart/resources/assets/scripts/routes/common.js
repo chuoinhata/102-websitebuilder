@@ -3,13 +3,15 @@ export default {
     // JavaScript to be fired on all pages
   },
   finalize() {
-    $( '.mini-cart' ).mouseover( function() {
-      $( this ).children( '.topCartContent' ).fadeIn( 200 )
-      return false
-    } ).mouseleave( function() {
-      $( this ).children( '.topCartContent' ).fadeOut( 200 )
-      return false
-    } )
+    const mini_cart = $( '.mybag-link' )
+    const content_cart = $( '.mini-cart' )
+    const close_cart = $( '.close-cart' )
+    mini_cart.click(function() {
+      content_cart.toggleClass('open-cart'); 
+    })
+    close_cart.click(function() {
+      content_cart.removeClass('open-cart'); 
+    });
 
     const header = $( '.header-warpper' )
     $( window ).scroll( function() {    
