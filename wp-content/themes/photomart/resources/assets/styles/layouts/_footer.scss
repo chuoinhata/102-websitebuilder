@@ -1,0 +1,90 @@
+.footer-warpper {
+	background: $black1;
+	color: $grey3;
+	padding: 50px 0 25px;
+	margin-top: 50px;
+
+	a {
+		color: $grey3;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.footer-widget {
+		margin-bottom: 25px;
+	}
+
+	.title-footer {
+		color: $white1;
+		text-transform: uppercase;
+		margin: 0 0 20px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 20px;
+	}
+
+	.form-subscribe {
+		max-width: 470px;
+		margin-top: 40px;
+
+		input {
+			padding: 21px 20px 24px;
+			background: none;
+			border-radius: 3px 0 0 3px;
+			border: 1px solid #3d3d3d;
+			height: 47px;
+			line-height: 47px;
+		}
+
+		.input-group-btn {
+			font-size: 0;
+			white-space: nowrap;
+		}
+
+		.btn {
+			z-index: 2;
+			margin-left: -1px;
+			padding: 12px 35px 13px;
+			height: 47px;
+			border: 0;
+			border-radius: 0 3px 3px 0;
+			font-size: 14px;
+
+			&:hover {
+				background: $white1;
+				color: $blue1;
+			}
+		}
+	}
+
+	.menu-footer {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 10px;
+
+			a {
+				text-transform: uppercase;
+
+				&:hover {
+					color: $blue1;
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	background: $grey5;
+	color: $white2;
+	text-align: center;
+	padding: 20px 0;
+
+	.godaddy-seal {
+		float: right;
+	}
+}
