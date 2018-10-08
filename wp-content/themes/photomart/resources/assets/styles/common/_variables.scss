@@ -1,10 +1,65 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
-$theme-colors: (
-  primary: #525ddc
-);
+// Colors
+$red1: #F26849;
+$blue1: #32c3f3;
+$yellow1: #f8f16e;
+$green1: #27ae60;
+$grey1: #696969;
+$grey2: #555;
+$grey3: #7d7d7d;
+$grey4: #ccc;
+$grey5: #292929;
+$grey6: #333;
+$white1: #fff;
+$white2: #9a9a9a;
+$black1: #2e2e2e;
+$black2: #000;
 
-/** Bootstrap navbar fix (https://git.io/fADqW) */
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
+// Size
+$font-size: 15px;
+$font-color: $grey1;
+
+// Form
+$input-border: $grey4;
+
+// Theme colors
+$menu-color: $white1;
+$menu-hover-color: $blue1;
+$header-background: rgba(0,0,0,.8);
+
+// Button
+$button-color: $white1;
+$button-background: $blue1;
+
+// Links
+$link-color: $green1;
+$link-hover-color: $green1;
+
+// Fonts
+$font-body: 'Lato', sans-serif; //Change with your font
+$font-heading: 'Lato', sans-serif; //Change with your font
+$color-heading: $font-color;
+$font-awesome: FontAwesome, sans-serif;
+
+// Background
+$backgound-body: $white1;
+
+//@include media-breakpoint-up(sm) { ... }	@media (min-width: 576px) { ... }
+//@include media-breakpoint-up(md) { ... }	@media (min-width: 768px) { ... }
+//@include media-breakpoint-up(lg) { ... }	@media (min-width: 992px) { ... }
+//@include media-breakpoint-up(xl) { ... }	@media (min-width: 1200px) { ... }
+
+//@include media-breakpoint-down(xs) { ... }	@media (max-width: 575px) { ... }
+//@include media-breakpoint-down(sm) { ... }	@media (max-width: 767px) { ... }
+//@include media-breakpoint-down(md) { ... }	@media (max-width: 991px) { ... }
+//@include media-breakpoint-down(lg) { ... }	@media (max-width: 1199px) { ... }
+
+//@include media-breakpoint-only(xs) { ... }	@media (max-width: 479px) { ... }
+//@include media-breakpoint-only(sm) { ... }	@media (min-width: 480px) and (max-width: 767px) { ... }
+//@include media-breakpoint-only(md) { ... }	@media (min-width: 768px) and (max-width: 991px) { ... }
+//@include media-breakpoint-only(lg) { ... }	@media (min-width: 992px) and (max-width: 1199px) { ... }
+//@include media-breakpoint-only(xl) { ... } 	@media (min-width: 1200px) { ... }
+
+//@include media-breakpoint-between(md, xl) { ... } 	@media (min-width: 768px) and (max-width: 1199px) { ... }
